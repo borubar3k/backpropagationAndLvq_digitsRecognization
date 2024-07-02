@@ -1,0 +1,22 @@
+import hickle as hkl
+from matplotlib import pyplot as plt
+
+[SSE1] = hkl.load('lvqLR1.hkl')
+[SSE2] = hkl.load('lvqLR05.hkl')
+[SSE3] = hkl.load('lvqLR01.hkl')
+[SSE4] = hkl.load('lvqLR005.hkl')
+[SSE5] = hkl.load('lvqLR001.hkl')
+[SSE6] = hkl.load('lvqLR0005.hkl')
+plt.plot(SSE1, 'red', label='lr=0.1')
+plt.plot(SSE2, 'green', label='lr=0.05')
+plt.plot(SSE3, 'blue', label='lr=0.01')
+plt.plot(SSE4, 'yellow', label='lr=0.005')
+plt.plot(SSE5, 'magenta', label='lr=0.001')
+plt.plot(SSE6, 'cyan', label='lr=0.0005')
+plt.xlabel('epochs')
+plt.ylabel('SSE')
+plt.yscale('linear')
+plt.title('epoch')
+plt.grid(True)
+plt.legend()
+plt.show()
